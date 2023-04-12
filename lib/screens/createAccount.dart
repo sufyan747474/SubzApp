@@ -10,6 +10,7 @@ class CreateAccount extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Container(
         width: width,
         height: height,
@@ -56,7 +57,7 @@ class CreateAccount extends StatelessWidget {
             ),
             SizedBox(
               width: width * .8,
-              height: height * .55,
+              height: height * .5,
               child: ListView(
                 padding: EdgeInsets.all(0),
                 children: [

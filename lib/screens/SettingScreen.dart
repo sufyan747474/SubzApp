@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:subz/utils/routes.dart';
 import 'package:subz/widgets/MyButtons.dart';
 import 'package:subz/widgets/SettingButtons.dart';
-import 'package:subz/widgets/bottomNevigation.dart';
 
 class SettingScreen extends StatefulWidget {
   const SettingScreen({super.key});
@@ -102,7 +102,9 @@ class _SettingScreenState extends State<SettingScreen> {
             SettingButons(
               image: 'assets/images/card.png',
               title: 'Card Details',
-              btnLink: () {},
+              btnLink: () {
+                Navigator.pushNamed(context, MyRoutes.CardDetails);
+              },
             ),
             SizedBox(
               height: width * .05,
@@ -110,7 +112,9 @@ class _SettingScreenState extends State<SettingScreen> {
             SettingButons(
               image: 'assets/images/papre.png',
               title: 'Terms and Conditions',
-              btnLink: () {},
+              btnLink: () {
+                Navigator.pushNamed(context, MyRoutes.TermsConditions);
+              },
             ),
             SizedBox(
               height: width * .05,
@@ -118,11 +122,15 @@ class _SettingScreenState extends State<SettingScreen> {
             SettingButons(
               image: 'assets/images/document.png',
               title: 'Privacy Policy',
-              btnLink: () {},
+              btnLink: () {
+                Navigator.pushNamed(context, MyRoutes.PrivacyPolicy);
+              },
             ),
             Spacer(),
             MyButtons(
-              BtnLink: () {},
+              BtnLink: () {
+                Navigator.pushNamed(context, MyRoutes.PreLogins);
+              },
               BtnText: 'Logout',
             ),
             SizedBox(
@@ -131,7 +139,7 @@ class _SettingScreenState extends State<SettingScreen> {
           ],
         ),
       ),
-      bottomNavigationBar: MyBottomNevigation(),
+      // bottomNavigationBar: MyBottomNevigation(),
     );
   }
 }

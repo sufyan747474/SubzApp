@@ -13,4 +13,13 @@ class MyRoutes {
   static String SettingScreen = '/SettingScreen';
   static String OrderScreen = '/OrderScreen';
   static String CardDetails = '/CardDetails';
+  static String MainScreen = '/MainScreen';
+  static String PrivacyPolicy = '/PrivacyPolicy';
+  static String TermsConditions = '/TermsConditions';
+  static String ProductDetails = '/ProductDetails';
+  static String CheckOut = '/CheckOut';
+  static String ThankYou = '/ThankYou';
+  static String YourPoint = '/YourPoint';
+  static String EarnCoins = '/EarnCoins';
+  static String WatchVideos = '/WatchVideos';
 }

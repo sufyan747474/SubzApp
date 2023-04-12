@@ -11,8 +11,13 @@ class CardInputField extends StatelessWidget {
     return Container(
       width: width * .9,
       padding: EdgeInsets.symmetric(horizontal: width * .06),
-      decoration: BoxDecoration(
-          color: Colors.white, borderRadius: BorderRadius.circular(16)),
+      decoration: BoxDecoration(boxShadow: [
+        BoxShadow(
+            color: Color.fromARGB(117, 124, 124, 124),
+            blurRadius: 5,
+            offset: Offset(0, 2),
+            spreadRadius: 0),
+      ], color: Colors.white, borderRadius: BorderRadius.circular(16)),
       child: TextFormField(
         cursorColor: Color(0xff000000),
         decoration: InputDecoration(

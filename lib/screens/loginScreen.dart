@@ -1,5 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:subz/mainScreen.dart';
+import 'package:subz/mainScreen1.dart';
 import 'package:subz/utils/routes.dart';
 import 'package:subz/widgets/MyButtons.dart';
 import 'package:subz/widgets/checkBox.dart';
@@ -189,7 +191,7 @@ class _popState extends State<pop> {
               children: [
                 InkWell(
                   onTap: () {
-                    Navigator.pushNamed(context, MyRoutes.CardDetails);
+                    Navigator.pushNamed(context, MyRoutes.OTPverification);
                   },
                   child: Container(
                     alignment: Alignment.center,
@@ -213,7 +215,11 @@ class _popState extends State<pop> {
                 ),
                 InkWell(
                   onTap: () {
-                    Navigator.pushNamed(context, MyRoutes.HomeScreen);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => MainScreen1(),
+                        ));
                   },
                   child: Container(
                     alignment: Alignment.center,

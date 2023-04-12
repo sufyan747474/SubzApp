@@ -32,8 +32,20 @@ class _MyInputFieldState extends State<MyInputField> {
       width: width * .8,
       padding: EdgeInsets.symmetric(vertical: 1),
       decoration: BoxDecoration(
-          color: Colors.white, borderRadius: BorderRadius.circular(16)),
+        boxShadow: [
+          BoxShadow(
+              color: Color.fromARGB(117, 124, 124, 124),
+              blurRadius: 5,
+              offset: Offset(0, 2),
+              spreadRadius: 0),
+        ],
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(16),
+      ),
       child: TextFormField(
+        onFieldSubmitted: (value) {
+          FocusScope.of(context).nextFocus();
+        },
         autovalidateMode: AutovalidateMode.onUserInteraction,
         validator: widget.validator,
         obscureText: isvisible,

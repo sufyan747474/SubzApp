@@ -29,8 +29,13 @@ class _SettingButonsState extends State<SettingButons> {
         padding: EdgeInsets.symmetric(
             vertical: height * 0.022, horizontal: width * .06),
         width: width * 0.8,
-        decoration: BoxDecoration(
-            color: Colors.white, borderRadius: BorderRadius.circular(16)),
+        decoration: BoxDecoration(boxShadow: [
+          BoxShadow(
+              color: Color.fromARGB(117, 124, 124, 124),
+              blurRadius: 5,
+              offset: Offset(0, 2),
+              spreadRadius: 0),
+        ], color: Colors.white, borderRadius: BorderRadius.circular(16)),
         child: Center(
           child: Row(
             children: [

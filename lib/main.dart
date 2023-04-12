@@ -1,17 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:subz/mainScreen.dart';
 import 'package:subz/popups/SelectSection.dart';
+import 'package:subz/popups/YourPoints.dart';
+import 'package:subz/popups/earnCoins.dart';
+import 'package:subz/popups/thankYou.dart';
 import 'package:subz/screens/CardDetails.dart';
 import 'package:subz/screens/EditProfile.dart';
 import 'package:subz/screens/MyProfile.dart';
 import 'package:subz/screens/OrderScreen.dart';
+import 'package:subz/screens/ProductDetails.dart';
 import 'package:subz/screens/SettingScreen.dart';
+import 'package:subz/screens/Terms&Conditions.dart';
+import 'package:subz/screens/VideosScreen.dart';
 import 'package:subz/screens/changePassword.dart';
+import 'package:subz/screens/checkOut.dart';
 import 'package:subz/screens/createAccount.dart';
 import 'package:subz/screens/homeScreen.dart';
 import 'package:subz/screens/loginScreen.dart';
 import 'package:subz/screens/otpVerification.dart';
 import 'package:subz/screens/preLogins.dart';
+import 'package:subz/screens/privacyPolicy.dart';
 import 'package:subz/screens/searchScreen.dart';
 import 'package:subz/screens/splashScreen.dart';
 import 'package:subz/utils/routes.dart';
@@ -58,6 +67,15 @@ class MyApp extends StatelessWidget {
         MyRoutes.SettingScreen: (context) => SettingScreen(),
         MyRoutes.OrderScreen: (context) => OrderScreen(),
         MyRoutes.CardDetails: (context) => CardDetails(),
+        MyRoutes.MainScreen: (context) => MainScreen(),
+        MyRoutes.PrivacyPolicy: (context) => PrivacyPolicy(),
+        MyRoutes.TermsConditions: (context) => TermsConditions(),
+        MyRoutes.ProductDetails: (context) => ProductDetails(),
+        MyRoutes.CheckOut: (context) => CheckOut(),
+        MyRoutes.ThankYou: (context) => ThankYou(),
+        MyRoutes.YourPoint: (context) => YourPoints(),
+        MyRoutes.EarnCoins: (context) => Earncoins(),
+        MyRoutes.WatchVideos: (context) => WatchVideos(),
       },
     );
   }

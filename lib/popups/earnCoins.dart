@@ -3,8 +3,8 @@ import 'package:subz/widgets/MyButtons.dart';
 
 import '../utils/routes.dart';
 
-class SelectSection extends StatelessWidget {
-  const SelectSection({super.key});
+class Earncoins extends StatelessWidget {
+  const Earncoins({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class SelectSection extends StatelessWidget {
             ),
             height: width * .13,
             child: Text(
-              'SELECT SECTIONS',
+              'YOUR POINTS',
               style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
               textAlign: TextAlign.center,
             ),
@@ -61,8 +61,43 @@ class SelectSection extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
+            Container(
+              height: width * .25,
+              width: width * .25,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(80),
+                color: Color(0xff82d231),
+              ),
+              child: Image.asset(
+                'assets/images/yourstar.png',
+                scale: 3,
+              ),
+            ),
+            SizedBox(
+              height: width * .05,
+            ),
+            Text(
+              '253',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 32,
+                  fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: width * .01,
+            ),
+            Text(
+              'Your Reward Points',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500),
+            ),
+            SizedBox(
+              height: width * .08,
+            ),
             MyButtons(
-                BtnText: 'Sub Store',
+                BtnText: 'Play Game',
                 BtnLink: () {
                   // Navigator.pushNamed(context, MyRoutes.SearchScreen);
                 }),
@@ -70,10 +105,14 @@ class SelectSection extends StatelessWidget {
               height: width * 0.05,
             ),
             MyButtons(
-                BtnText: 'Point Store',
-                BtnLink: () {
-                  // Navigator.pushNamed(context, MyRoutes.SettingScreen);
-                }),
+              BtnText: 'Watch Videos',
+              BtnLink: () {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, MyRoutes.WatchVideos);
+              },
+              BtnColor: Color(0xff7ca000),
+              TextColor: Colors.white,
+            ),
           ],
         ),
       ),

@@ -25,8 +25,13 @@ class MyButton extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 1),
         width: width * 0.8,
-        decoration: BoxDecoration(
-            color: BtnColor, borderRadius: BorderRadius.circular(16)),
+        decoration: BoxDecoration(boxShadow: [
+          BoxShadow(
+              color: Color.fromARGB(117, 124, 124, 124),
+              blurRadius: 5,
+              offset: Offset(0, 2),
+              spreadRadius: 0),
+        ], color: BtnColor, borderRadius: BorderRadius.circular(16)),
         child: Row(
           children: [
             SizedBox(

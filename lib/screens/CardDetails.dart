@@ -13,6 +13,7 @@ class CardDetails extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       backgroundColor: Color(0xff0c5fe01),
       body: Container(
         width: width,
@@ -29,13 +30,30 @@ class CardDetails extends StatelessWidget {
             ),
             SizedBox(
               width: width * 0.9,
-              child: Text(
-                'CARD DETAILS',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 17,
-                    fontWeight: FontWeight.w600),
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  InkWell(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Image.asset(
+                        'assets/images/arrow-back.png',
+                        width: width * .03,
+                      ),
+                    ),
+                  ),
+                  Text(
+                    'CARD DETAILS',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 17,
+                        fontWeight: FontWeight.w600),
+                  ),
+                ],
               ),
             ),
             SizedBox(
@@ -115,7 +133,7 @@ class CardDetails extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: MyBottomNevigation(),
+      // bottomNavigationBar: MyBottomNevigation(),
     );
   }
 }
