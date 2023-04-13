@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 
 class CardInputField extends StatelessWidget {
   String title;
-  CardInputField({super.key, required this.title});
+  bool closekeyboard;
+  CardInputField({
+    super.key,
+    required this.title,
+    this.closekeyboard = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +24,8 @@ class CardInputField extends StatelessWidget {
             spreadRadius: 0),
       ], color: Colors.white, borderRadius: BorderRadius.circular(16)),
       child: TextFormField(
+        textInputAction:
+            closekeyboard ? TextInputAction.done : TextInputAction.next,
         cursorColor: Color(0xff000000),
         decoration: InputDecoration(
           labelStyle: TextStyle(color: Color(0xffb1b1b1), fontSize: 18),

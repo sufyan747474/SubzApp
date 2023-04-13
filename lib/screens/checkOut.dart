@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:subz/popups/thankYou.dart';
-import 'package:subz/utils/routes.dart';
 import 'package:subz/widgets/MyButtons.dart';
+
+import '../widgets/header.dart';
 
 class CheckOut extends StatelessWidget {
   const CheckOut({super.key});
@@ -27,13 +28,8 @@ class CheckOut extends StatelessWidget {
             SizedBox(
               height: height * .06,
             ),
-            Text(
-              'CHECKOUT',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 17,
-                  fontWeight: FontWeight.w600),
+            AppHeader(
+              PageTitel: 'CHECKOUT',
             ),
             SizedBox(
               height: width * .1,

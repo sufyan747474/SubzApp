@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:subz/popups/SelectSection.dart';
-import 'package:subz/popups/YourPoints.dart';
 import 'package:subz/utils/routes.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:subz/widgets/categories.dart';
+import 'package:subz/widgets/header.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
 
-  List<String> categories = ["category1", "category2", "category3"];
+  List<String> categories = ["Category 1", "Category 2", "Category 3"];
   List<String> IconImages = [
     'assets/images/building.png',
     'assets/images/bike.png',
@@ -37,74 +36,10 @@ class HomeScreen extends StatelessWidget {
             SizedBox(
               height: height * .06,
             ),
-            SizedBox(
-              width: width * 0.9,
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  Align(
-                    alignment: Alignment.topLeft,
-                    child: InkWell(
-                      onTap: () {
-                        showDialog(
-                          context: context,
-                          builder: (context) {
-                            return SelectSection();
-                          },
-                        );
-                      },
-                      child: Container(
-                        height: height * .045,
-                        padding: EdgeInsets.symmetric(horizontal: 8),
-                        width: width * .27,
-                        decoration: BoxDecoration(
-                            color: Color(0xff0c5fe01),
-                            borderRadius: BorderRadius.circular(8)),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Sub Store',
-                            ),
-                            SizedBox(
-                              width: width * .02,
-                            ),
-                            Image.asset(
-                              'assets/images/arrow-alt-circle-down.png',
-                              width: width * .04,
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  Text(
-                    'HOME',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 17,
-                        fontWeight: FontWeight.w600),
-                  ),
-                  Align(
-                      alignment: Alignment.topRight,
-                      child: InkWell(
-                        onTap: () {
-                          showDialog(
-                              context: context,
-                              builder: (context) {
-                                return YourPoints();
-                              });
-                        },
-                        child: Container(
-                          child: Image.asset(
-                            'assets/images/starimg.png',
-                            width: width * .07,
-                          ),
-                        ),
-                      )),
-                ],
-              ),
+            AppHeader(
+              Points: true,
+              SubSet: true,
+              PageTitel: 'HOME',
             ),
             SizedBox(
               height: width * .06,
@@ -188,12 +123,12 @@ class HomeScreen extends StatelessWidget {
               }).toList(),
             ),
             SizedBox(
-              height: width * .06,
+              height: width * .04,
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: width * .02),
               child: SizedBox(
-                height: width * .09,
+                height: width * .12,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: 3,
@@ -212,7 +147,7 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: width * .06,
+              height: width * .04,
             ),
             Expanded(
               child: GridView.builder(

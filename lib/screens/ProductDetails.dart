@@ -1,10 +1,8 @@
-import 'dart:math';
-
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:subz/utils/routes.dart';
-import 'package:subz/widgets/bottomNevigation.dart';
 import 'package:subz/widgets/productQuantity.dart';
+
+import '../widgets/header.dart';
 
 class ProductDetails extends StatelessWidget {
   ProductDetails({super.key});
@@ -36,27 +34,9 @@ class ProductDetails extends StatelessWidget {
               SizedBox(
                 height: height * .06,
               ),
-              SizedBox(
-                width: width * 0.9,
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    Text(
-                      'PRODUCT DETAILS',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 17,
-                          fontWeight: FontWeight.w600),
-                    ),
-                    Align(
-                        alignment: Alignment.topRight,
-                        child: Image.asset(
-                          'assets/images/starimg.png',
-                          width: width * .07,
-                        )),
-                  ],
-                ),
+              AppHeader(
+                PageTitel: 'PRODUCT DETAILS',
+                Points: true,
               ),
               SizedBox(
                 height: width * .06,

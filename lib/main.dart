@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:subz/mainScreen.dart';
 import 'package:subz/popups/SelectSection.dart';
@@ -26,7 +27,11 @@ import 'package:subz/screens/splashScreen.dart';
 import 'package:subz/utils/routes.dart';
 
 void main() {
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  runApp(
+    const MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {

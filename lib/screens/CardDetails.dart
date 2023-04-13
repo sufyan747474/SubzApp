@@ -123,7 +123,7 @@ class CardDetails extends StatelessWidget {
             SizedBox(
               height: width * .05,
             ),
-            CardInputField(title: 'CVV'),
+            CardInputField(title: 'CVV', closekeyboard: true),
             SizedBox(
               height: width * .08,
             ),

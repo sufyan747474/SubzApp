@@ -1,7 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:subz/mainScreen.dart';
 import 'package:subz/mainScreen1.dart';
+import 'package:subz/screens/Terms&Conditions.dart';
+import 'package:subz/screens/privacyPolicy.dart';
 import 'package:subz/utils/routes.dart';
 import 'package:subz/widgets/MyButtons.dart';
 import 'package:subz/widgets/checkBox.dart';
@@ -64,7 +65,7 @@ class LoginScreen extends StatelessWidget {
               // },
               FieldIcon: 'assets/images/icon-lock.png',
               Textlabel: 'Password',
-              obsecText: true,
+              obsecText: true, closekeyboard: true,
               sufixIocn: Icon(
                 Icons.remove_red_eye,
                 color: Color(0xffb1b1b1),
@@ -179,11 +180,27 @@ class _popState extends State<pop> {
             SizedBox(
               height: width * 0.05,
             ),
-            MyCheckBox(text: 'Terms & Conditions'),
+            MyCheckBox(
+              text: 'Terms & Conditions',
+              url: () {
+                showDialog(
+                  context: context,
+                  builder: (context) => TermsConditions(),
+                );
+              },
+            ),
             SizedBox(
               height: width * .02,
             ),
-            MyCheckBox(text: 'Privacy Policy'),
+            MyCheckBox(
+              text: 'Privacy Policy',
+              url: () {
+                showDialog(
+                  context: context,
+                  builder: (context) => PrivacyPolicy(),
+                );
+              },
+            ),
             SizedBox(
               height: width * 0.05,
             ),

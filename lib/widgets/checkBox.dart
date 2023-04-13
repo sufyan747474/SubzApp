@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 class MyCheckBox extends StatefulWidget {
   String text;
+  VoidCallback url;
 
-  MyCheckBox({super.key, required this.text});
+  MyCheckBox({super.key, required this.text, required this.url});
 
   @override
   State<MyCheckBox> createState() => _MyCheckBoxState();
@@ -22,6 +23,7 @@ class _MyCheckBoxState extends State<MyCheckBox> {
         SizedBox(
           width: width * .05,
           child: Checkbox(
+            materialTapTargetSize: MaterialTapTargetSize.padded,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(4))),
             fillColor: MaterialStatePropertyAll(Color(
@@ -38,10 +40,13 @@ class _MyCheckBoxState extends State<MyCheckBox> {
         SizedBox(
           width: width * .04,
         ),
-        Text(
-          widget.text,
-          style: TextStyle(
-            color: Colors.black,
+        InkWell(
+          onTap: widget.url,
+          child: Text(
+            widget.text,
+            style: TextStyle(
+              color: Colors.black,
+            ),
           ),
         )
       ],

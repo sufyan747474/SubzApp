@@ -58,6 +58,7 @@ class ChangePassword extends StatelessWidget {
               FieldIcon: 'assets/images/icon-lock.png',
               Textlabel: 'Confirm New Password',
               obsecText: true,
+              closekeyboard: true,
               sufixIocn: Icon(
                 Icons.remove_red_eye,
                 color: Color(0xffb1b1b1),

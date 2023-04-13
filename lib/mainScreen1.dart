@@ -22,7 +22,15 @@ class MainScreen1 extends StatefulWidget {
   State<MainScreen1> createState() => _MainScreen1State();
 }
 
-class _MainScreen1State extends State<MainScreen1> {
+class _MainScreen1State extends State<MainScreen1>
+    with TickerProviderStateMixin {
+  late TabController _tabController;
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 5, vsync: this);
+  }
+
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -39,6 +47,7 @@ class _MainScreen1State extends State<MainScreen1> {
             // Your code goes here.
             // To get index of current tab use tabController.index
             tabController.index;
+            setState(() {});
           }
         });
         return Scaffold(
@@ -53,15 +62,15 @@ class _MainScreen1State extends State<MainScreen1> {
               padding:
                   EdgeInsets.symmetric(vertical: 15, horizontal: width * 0),
               height: width * 0.22,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Color(0xff1c1c1c),
                 shape: BoxShape.rectangle,
                 borderRadius: BorderRadius.all(Radius.circular(18)),
               ),
               child: TabBar(
-                onTap: (value) {
-                  setState(() {});
-                },
+                // onTap: (value) {
+                //   setState(() {});
+                // },
                 padding: EdgeInsets.all(0),
                 indicator: BoxDecoration(color: Colors.transparent),
                 tabs: [
@@ -79,7 +88,7 @@ class _MainScreen1State extends State<MainScreen1> {
                       Text(
                         'Home',
                         style: TextStyle(
-                            fontSize: 11.5,
+                            fontSize: 11,
                             color: tabController.index == 0
                                 ? Color(0xffc5fe01)
                                 : Colors.white),
@@ -100,7 +109,7 @@ class _MainScreen1State extends State<MainScreen1> {
                       Text(
                         'Search',
                         style: TextStyle(
-                            fontSize: 11.5,
+                            fontSize: 11.0,
                             color: tabController.index == 1
                                 ? Color(0xffc5fe01)
                                 : Colors.white),
@@ -121,7 +130,7 @@ class _MainScreen1State extends State<MainScreen1> {
                       Text(
                         'Orders',
                         style: TextStyle(
-                            fontSize: 11.5,
+                            fontSize: 11.0,
                             color: tabController.index == 2
                                 ? Color(0xffc5fe01)
                                 : Colors.white),
@@ -142,7 +151,7 @@ class _MainScreen1State extends State<MainScreen1> {
                       Text(
                         'Profile',
                         style: TextStyle(
-                            fontSize: 11.5,
+                            fontSize: 11.0,
                             color: tabController.index == 3
                                 ? Color(0xffc5fe01)
                                 : Colors.white),
@@ -164,7 +173,7 @@ class _MainScreen1State extends State<MainScreen1> {
                         Text(
                           'Settings',
                           style: TextStyle(
-                              fontSize: 11.5,
+                              fontSize: 11.0,
                               color: tabController.index == 4
                                   ? Color(0xffc5fe01)
                                   : Colors.white),

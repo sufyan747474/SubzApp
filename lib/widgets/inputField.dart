@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 
 class MyInputField extends StatefulWidget {
@@ -8,14 +6,17 @@ class MyInputField extends StatefulWidget {
   bool obsecText;
   Icon? sufixIocn;
   String? Function(String?)? validator;
+  bool closekeyboard;
 
-  MyInputField(
-      {super.key,
-      required this.FieldIcon,
-      required this.Textlabel,
-      this.obsecText = false,
-      this.validator,
-      this.sufixIocn});
+  MyInputField({
+    super.key,
+    required this.FieldIcon,
+    required this.Textlabel,
+    this.obsecText = false,
+    this.validator,
+    this.sufixIocn,
+    this.closekeyboard = false,
+  });
 
   @override
   State<MyInputField> createState() => _MyInputFieldState();
@@ -23,7 +24,6 @@ class MyInputField extends StatefulWidget {
 
 class _MyInputFieldState extends State<MyInputField> {
   bool isvisible = false;
-
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -43,10 +43,8 @@ class _MyInputFieldState extends State<MyInputField> {
         borderRadius: BorderRadius.circular(16),
       ),
       child: TextFormField(
-        onFieldSubmitted: (value) {
-          FocusScope.of(context).nextFocus();
-        },
-        autovalidateMode: AutovalidateMode.onUserInteraction,
+        textInputAction:
+            widget.closekeyboard ? TextInputAction.done : TextInputAction.next,
         validator: widget.validator,
         obscureText: isvisible,
         style: TextStyle(color: Color(0xff000000)),

@@ -105,7 +105,8 @@ class CreateAccount extends StatelessWidget {
                   ),
                   MyInputField(
                       FieldIcon: 'assets/images/material-location-on.png',
-                      Textlabel: 'Address'),
+                      Textlabel: 'Address',
+                      closekeyboard: true),
                   SizedBox(
                     height: width * 0.05,
                   ),

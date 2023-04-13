@@ -36,7 +36,8 @@ class UploadVideo extends StatelessWidget {
             },
             child: Container(
               child: Padding(
-                padding: const EdgeInsets.only(right: 20),
+                padding: EdgeInsets.symmetric(
+                    vertical: width * 0.02, horizontal: width * 0.04),
                 child: Align(
                   alignment: Alignment.centerRight,
                   child: Image.asset(

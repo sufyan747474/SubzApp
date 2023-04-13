@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:subz/popups/earnCoins.dart';
 import 'package:subz/widgets/MyButtons.dart';
 
-import '../utils/routes.dart';
-
 class YourPoints extends StatelessWidget {
   const YourPoints({super.key});
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:subz/models/CardProduct.dart';
-import 'package:subz/widgets/bottomNevigation.dart';
 import 'package:subz/widgets/cardProducts.dart';
+import 'package:subz/widgets/header.dart';
 
 class SearchScreen extends StatelessWidget {
   SearchScreen({super.key});
@@ -33,54 +33,7 @@ class SearchScreen extends StatelessWidget {
             SizedBox(
               height: height * .06,
             ),
-            SizedBox(
-              width: width * .9,
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  Align(
-                    alignment: Alignment.topLeft,
-                    child: Container(
-                      height: height * .045,
-                      padding: EdgeInsets.symmetric(horizontal: 8),
-                      width: width * .27,
-                      decoration: BoxDecoration(
-                          color: Color(0xff0c5fe01),
-                          borderRadius: BorderRadius.circular(8)),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Sub Store',
-                          ),
-                          SizedBox(
-                            width: width * .02,
-                          ),
-                          Image.asset(
-                            'assets/images/arrow-alt-circle-down.png',
-                            width: width * .04,
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                  Text(
-                    'SEARCH',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 17,
-                        fontWeight: FontWeight.w600),
-                  ),
-                  Align(
-                      alignment: Alignment.topRight,
-                      child: Image.asset(
-                        'assets/images/starimg.png',
-                        width: width * .07,
-                      )),
-                ],
-              ),
-            ),
+            AppHeader(PageTitel: 'SEARCH', Points: true, SubSet: true),
             SizedBox(
               height: width * .06,
             ),

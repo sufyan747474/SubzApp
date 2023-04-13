@@ -31,6 +31,8 @@ class ThankYou extends StatelessWidget {
                 child: InkWell(
                   onTap: () => Navigator.pop(context),
                   child: Container(
+                    padding: EdgeInsets.symmetric(
+                        vertical: width * 0.02, horizontal: width * 0.02),
                     child: Image.asset(
                       'assets/images/icon-close.png',
                       scale: 4,
@@ -161,7 +163,10 @@ class ThankYou extends StatelessWidget {
                       ),
                     ),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.pop(context);
+                        Navigator.pop(context);
+                      },
                       child: Container(
                         alignment: Alignment.center,
                         width: width * .35,

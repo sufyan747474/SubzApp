@@ -14,29 +14,32 @@ class MyCategories extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     return InkWell(
       onTap: url,
-      child: Container(
-        alignment: Alignment.center,
-        padding: EdgeInsets.symmetric(
-            horizontal: width * .04, vertical: width * .02),
-        width: width * .36,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(18),
-          color: Color(0xff647b11),
-        ),
-        child: Row(
-          children: [
-            Image.asset(
-              image,
-              width: width * .05,
-            ),
-            SizedBox(
-              width: width * .02,
-            ),
-            Text(
-              title,
-              style: TextStyle(color: Colors.white),
-            ),
-          ],
+      child: Padding(
+        padding: EdgeInsets.all(width * .015),
+        child: Container(
+          alignment: Alignment.center,
+          padding: EdgeInsets.symmetric(
+              horizontal: width * .04, vertical: width * .02),
+          width: width * .36,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(18),
+            color: Color(0xff647b11),
+          ),
+          child: Row(
+            children: [
+              Image.asset(
+                image,
+                width: width * .05,
+              ),
+              SizedBox(
+                width: width * .02,
+              ),
+              Text(
+                title,
+                style: TextStyle(color: Colors.white),
+              ),
+            ],
+          ),
         ),
       ),
     );

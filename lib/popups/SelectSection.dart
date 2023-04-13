@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:subz/widgets/MyButtons.dart';
 
-import '../utils/routes.dart';
-
 class SelectSection extends StatelessWidget {
   const SelectSection({super.key});
 
@@ -35,7 +33,7 @@ class SelectSection extends StatelessWidget {
             },
             child: Container(
               child: Padding(
-                padding: const EdgeInsets.only(right: 20),
+                padding: EdgeInsets.all(width * 0.04),
                 child: Align(
                   alignment: Alignment.centerRight,
                   child: Image.asset(
