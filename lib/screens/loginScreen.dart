@@ -208,7 +208,7 @@ class _popState extends State<pop> {
               children: [
                 InkWell(
                   onTap: () {
-                    Navigator.pushNamed(context, MyRoutes.OTPverification);
+                    Navigator.pushNamed(context, MyRoutes.LoginScreen);
                   },
                   child: Container(
                     alignment: Alignment.center,
