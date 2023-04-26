@@ -1,9 +1,18 @@
+import 'dart:math';
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:subz/widgets/MyButtons.dart';
 import 'package:subz/widgets/inputField.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 class CreateAccount extends StatelessWidget {
-  const CreateAccount({super.key});
+  CreateAccount({super.key});
+
+  // FirebaseAuth _auth = FirebaseAuth.instance;
+
+  final emailconroller = TextEditingController();
+  final passwordcontroller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -68,12 +77,15 @@ class CreateAccount extends StatelessWidget {
                     height: width * 0.05,
                   ),
                   MyInputField(
-                      FieldIcon: 'assets/images/email.png',
-                      Textlabel: 'Email Address'),
+                    inputController: emailconroller,
+                    FieldIcon: 'assets/images/email.png',
+                    Textlabel: 'Email Address',
+                  ),
                   SizedBox(
                     height: width * 0.05,
                   ),
                   MyInputField(
+                    inputController: passwordcontroller,
                     FieldIcon: 'assets/images/icon-lock.png',
                     Textlabel: 'Password',
                     obsecText: true,
@@ -107,6 +119,14 @@ class CreateAccount extends StatelessWidget {
                       FieldIcon: 'assets/images/material-location-on.png',
                       Textlabel: 'Address',
                       closekeyboard: true),
+                  // TextFormField(
+                  //   controller: emailconroller,
+                  //   decoration: InputDecoration(label: Text('Name')),
+                  // ),
+                  // TextFormField(
+                  //   controller: passwordcontroller,
+                  //   decoration: InputDecoration(label: Text('pass')),
+                  // ),
                   SizedBox(
                     height: width * 0.05,
                   ),
@@ -114,7 +134,13 @@ class CreateAccount extends StatelessWidget {
               ),
             ),
             Spacer(),
-            MyButtons(BtnText: 'Create', BtnLink: () {}),
+            MyButtons(
+                BtnText: 'Create',
+                BtnLink: () {
+                  FirebaseAuth.instance.createUserWithEmailAndPassword(
+                      email: emailconroller.text.toString(),
+                      password: passwordcontroller.text.toString());
+                }),
             SizedBox(height: width * 0.1),
           ],
         ),

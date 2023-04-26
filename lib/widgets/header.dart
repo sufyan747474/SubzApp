@@ -36,7 +36,7 @@ class AppHeader extends StatelessWidget {
                 },
                 child: Container(
                   height: height * .045,
-                  padding: EdgeInsets.symmetric(horizontal: 8),
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
                   width: width * .27,
                   decoration: BoxDecoration(
                       color: Color(0xff0c5fe01),
@@ -44,7 +44,7 @@ class AppHeader extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text(
+                      const Text(
                         'Sub Store',
                       ),
                       SizedBox(
@@ -62,7 +62,7 @@ class AppHeader extends StatelessWidget {
           Text(
             PageTitel,
             textAlign: TextAlign.center,
-            style: TextStyle(
+            style: const TextStyle(
                 color: Colors.white, fontSize: 17, fontWeight: FontWeight.w600),
           ),
           if (Points == true)
@@ -73,7 +73,7 @@ class AppHeader extends StatelessWidget {
                     showDialog(
                         context: context,
                         builder: (context) {
-                          return YourPoints();
+                          return const YourPoints();
                         });
                   },
                   child: Container(

@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -25,10 +26,13 @@ import 'package:subz/screens/privacyPolicy.dart';
 import 'package:subz/screens/searchScreen.dart';
 import 'package:subz/screens/splashScreen.dart';
 import 'package:subz/utils/routes.dart';
+import 'firebase_options.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
   runApp(
     const MyApp(),
   );
@@ -42,7 +46,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
         //

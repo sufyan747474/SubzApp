@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MyButton extends StatelessWidget {
-  String Btnicon;
+  final String Btnicon;
   String BtnText;
   VoidCallback BtnLink;
   Color BtnColor;

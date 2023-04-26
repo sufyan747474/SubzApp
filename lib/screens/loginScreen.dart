@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:subz/mainScreen1.dart';
 import 'package:subz/screens/Terms&Conditions.dart';
 import 'package:subz/screens/privacyPolicy.dart';
+import 'package:subz/screens/sliverpractive.dart';
 import 'package:subz/utils/routes.dart';
 import 'package:subz/widgets/MyButtons.dart';
 import 'package:subz/widgets/checkBox.dart';

@@ -7,6 +7,7 @@ class MyInputField extends StatefulWidget {
   Icon? sufixIocn;
   String? Function(String?)? validator;
   bool closekeyboard;
+  TextEditingController? inputController;
 
   MyInputField({
     super.key,
@@ -16,6 +17,7 @@ class MyInputField extends StatefulWidget {
     this.validator,
     this.sufixIocn,
     this.closekeyboard = false,
+    this.inputController,
   });
 
   @override
@@ -43,6 +45,7 @@ class _MyInputFieldState extends State<MyInputField> {
         borderRadius: BorderRadius.circular(16),
       ),
       child: TextFormField(
+        controller: TextEditingController(),
         textInputAction:
             widget.closekeyboard ? TextInputAction.done : TextInputAction.next,
         validator: widget.validator,

@@ -3,8 +3,6 @@ import 'package:subz/widgets/CardDetailsButton.dart';
 import 'package:subz/widgets/CardInputField.dart';
 import 'package:subz/widgets/MyButtons.dart';
 
-import '../widgets/bottomNevigation.dart';
-
 class CardDetails extends StatelessWidget {
   const CardDetails({super.key});
 
